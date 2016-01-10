@@ -45,22 +45,23 @@
                     
     if ($Lifetime)
     {
-        $Lifetime = "+{0}" -f $Lifetime
+        $LifetimeMsg = "+{0}" -f $Lifetime
     }
     if ($Group)
     {
-        $Group = "/group:{0}" -f $Group
+        $GroupMsg = "/group:{0}" -f $Group
     }
     if (!$Hostname)
     {
         $v_IPGP = [System.Net.NetworkInformation.IPGlobalProperties]::GetIPGlobalProperties();
-        $Hostname = ("{0}.{1}" -f ($v_IPGP.HostName.Trim(".")), $v_IPGP.DomainName).ToLower();
-    }    
+        $HostnameMsg = ("{0}.{1}" -f ($v_IPGP.HostName.Trim(".")), $v_IPGP.DomainName).Trim(".").ToLower();
+    }
+    else { $HostnameMsg = $Hostname}
     if ($Text)
     {
         $Text = " $Text"
     }
-    Send-XymonRaw -XymonServer $XymonServer -Msg "Status$Lifetime$Group $Hostname.$TestName $Color$Text"
+    Send-XymonRaw -XymonServer $XymonServer -Msg "Status$LifetimeMsg$GroupMsg $HostnameMsg.$TestName $Color$Text"
 }
 
 function Send-XymonRaw
