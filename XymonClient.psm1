@@ -61,7 +61,7 @@
     {
         $Text = " $Text"
     }
-    Send-XymonRaw -XymonServer $XymonServer -Msg "Status$LifetimeMsg$GroupMsg $HostnameMsg.$TestName $Color$Text"
+    Send-XymonRaw -XymonServer $XymonServer -Msg "status$LifetimeMsg$GroupMsg $HostnameMsg.$TestName $Color$Text"
 }
 
 function Send-XymonRaw
