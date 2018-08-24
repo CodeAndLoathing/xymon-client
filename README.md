@@ -1,8 +1,6 @@
 # xymon-client
 A simple TCP client for Xymon implemented in Powershell.
 
-Version 2016.01.10
-
 ## Description
 
 The goal is to provide a script small enough to be easily understood in its
