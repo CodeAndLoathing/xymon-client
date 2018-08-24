@@ -9,7 +9,7 @@
         Xymon status message syntax was retrieved from : https://www.xymon.com/help/manpages/man1/xymon.1.html
         SYNTAX: status[+LIFETIME][/group:GROUP] HOSTNAME.TESTNAME COLOR <additional text>
         .PARAMETER Lifetime
-        Number of seconds status remains valid after being received by Xymon. (Default is 30 minutes).
+        Number of minutes status remains valid after being received by Xymon. (Default is 30 minutes).
         .PARAMETER Group
         Used to direct alerts to a specific group
         .PARAMETER Hostname
@@ -25,7 +25,7 @@
     #>
     [cmdletbinding()]
     Param(
-        [Parameter(Mandatory=$false, HelpMessage="Number of seconds status remains valid after being received by Xymon. (Default is 30 minutes).")]
+        [Parameter(Mandatory=$false, HelpMessage="Number of minutes status remains valid after being received by Xymon. (Default is 30 minutes).")]
         [ValidateRange(0,[int]::MaxValue)]
         [int] $Lifetime,
         [Parameter(Mandatory=$false, HelpMessage="Used to direct alerts to a specific group")]
