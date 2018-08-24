@@ -50,7 +50,7 @@ how you can use it.
 
 ## Versions
 
-2016.01.10	Initial Release
+See [Releases](https://github.com/CodeAndLoathing/xymon-client/releases)
 
 ## License
 See the LICENSE file for license details.
